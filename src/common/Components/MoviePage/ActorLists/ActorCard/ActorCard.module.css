@@ -1,0 +1,20 @@
+.avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.actor_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    margin-top: 10px;
+}
+
+.character {
+    margin-top: 0;
+}

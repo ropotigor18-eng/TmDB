@@ -1,0 +1,25 @@
+.category_header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+
+.link {
+    text-decoration: none;
+    color: var(--text);
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid transparent;;
+    font-size: 18px;
+    transition: color 0.3s linear;
+}
+
+.activeLink {
+    background-color: #7e7e8a;
+}
+
+.link:hover {
+    color: #626271;
+}

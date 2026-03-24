@@ -1,0 +1,29 @@
+
+body.light {
+    --bg: #ffffff;
+    --text: #213547;
+}
+
+body.dark {
+    --bg: #0b1120;
+    --text: #e2e8f0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.layout {
+    max-width: 1186px;
+    margin: 0 auto;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}

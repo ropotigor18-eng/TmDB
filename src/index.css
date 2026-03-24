@@ -1,0 +1,24 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body.light {
+    --bg: #ffffff;
+    --text: #1c272c;
+    --card-bg: #f5f7fa;
+    --border: #e5e7eb;
+}
+
+body.dark {
+    --bg: #0b1120;
+    --text: #e2e8f0;
+    --card-bg: #111827;
+    --border: #1f2937;
+    --card-shadow: rgba(255, 255, 255, 0.06);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}

@@ -1,0 +1,16 @@
+.movi_poster {
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.genres {
+    display: flex;
+    gap: 10px;
+}
+
+.movie_info {
+    display: flex;
+    gap: 30px;
+}

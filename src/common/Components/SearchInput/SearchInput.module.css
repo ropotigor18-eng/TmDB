@@ -1,0 +1,32 @@
+.search {
+    display: flex;
+    gap: 8px;
+}
+
+.input {
+    width: 400px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    outline: none;
+
+}
+
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.button {
+    padding: 8px 16px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}

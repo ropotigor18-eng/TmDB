@@ -1,0 +1,15 @@
+.button {
+    border: 1px solid #1f2b40;
+    text-decoration: none;
+    background-color: #1f2b40;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.button:hover {
+    opacity: 0.8;
+}

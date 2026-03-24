@@ -1,0 +1,49 @@
+
+.filter_interrface {
+    width: 300px;
+    border-radius: 15px;
+    padding: 15px;
+    height: 70%;
+    background: var(--card-bg);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark .filter_interrface {
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.filter {
+    display: flex;
+    padding-top: 20px;
+    gap: 10px;
+
+
+}
+
+.movie_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    flex: 1;
+}
+
+.reset_btn {
+    margin-top: 60px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: blue;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--text);
+    border: 1px solid var(--border);
+}

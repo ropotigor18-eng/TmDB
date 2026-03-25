@@ -5,7 +5,7 @@ export const baseApi = createApi({
     reducerPath: 'baseApi',
     tagTypes: ['Popular'],
     baseQuery: fetchBaseQuery({
-        baseUrl: '/api',
+        baseUrl: 'https://api.themoviedb.org/3',
         prepareHeaders: (headers) => {
             headers.set(
                 'Authorization',

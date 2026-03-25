@@ -1,0 +1,123 @@
+.moviesGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.movieCard {
+    width: 20%;
+}
+
+.moviePoster {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.movieTitle {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.movieRating {
+    display: block;
+}
+
+.detailLayout {
+    display: flex;
+    gap: 30px;
+}
+
+.detailPoster {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.detailContent {
+    flex: 1;
+}
+
+.detailTitle {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.detailText {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.genreRow {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.genreItem {
+    width: 90px;
+    height: 34px;
+    border-radius: 999px;
+}
+
+.sectionTitle {
+    display: block;
+    margin: 32px 0 16px;
+}
+
+.actorsRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.actorCard {
+    width: 16%;
+}
+
+.actorAvatar {
+    width: 100%;
+    aspect-ratio: 1 / 1.2;
+    border-radius: 20px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.actorText {
+    display: block;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+    .movieCard {
+        width: calc(50% - 8px);
+    }
+
+    .detailLayout {
+        flex-direction: column;
+    }
+
+    .detailPoster {
+        width: 100%;
+        height: 320px;
+    }
+
+    .actorCard {
+        width: calc(50% - 8px);
+    }
+
+    .actorsRow {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 560px) {
+    .movieCard,
+    .actorCard {
+        width: 100%;
+    }
+}

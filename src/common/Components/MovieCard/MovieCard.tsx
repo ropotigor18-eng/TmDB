@@ -33,6 +33,10 @@ const MovieCard = ({movie}: Props) => {
                 src={movie.poster_path
                     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                     : zagl}
+                onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = zagl;
+                }}
                 alt={movie.title}
             />
             <button

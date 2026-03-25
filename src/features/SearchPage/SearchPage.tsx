@@ -5,6 +5,8 @@ import MovieCard from "../../common/Components/MovieCard/MovieCard.tsx";
 import s from './SearchPage.module.css';
 import {useSearchParams} from "react-router";
 import {Pagination} from "../../common/Components/Pagination/Pagination.tsx";
+import RequestFeedback from "../../common/Components/RequestFeedback/RequestFeedback.tsx";
+import MovieGridSkeleton from "../../common/Components/Skeletons/MovieGridSkeleton.tsx";
 
 
 const SearchPage = () => {
@@ -19,12 +21,10 @@ const SearchPage = () => {
         setSearch(query);
     }, [query]);
 
-    const {data, isLoading} = useSearchMoviesQuery(
+    const {data, isLoading, isError} = useSearchMoviesQuery(
         {query, page},
         {skip: !query}
     );
-
-    if (isLoading) return <h1>loading</h1>;
 
     return (
         <div>
@@ -36,6 +36,11 @@ const SearchPage = () => {
             />
 
             {!query && <p>Start typing to search...</p>}
+            {query && isLoading && <MovieGridSkeleton/>}
+            {query && isError && <RequestFeedback message="Search failed. Try again in a moment." variant="error"/>}
+            {query && !isLoading && !isError && data?.results.length === 0 && (
+                <RequestFeedback message="No movies were found for this query."/>
+            )}
 
             {query && (
                 <div className={s.container}>

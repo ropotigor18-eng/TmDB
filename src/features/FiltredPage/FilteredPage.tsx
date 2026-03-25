@@ -8,6 +8,8 @@ import RatingRange from "./RatingRange/RatingRange.tsx";
 import {useDebounceValue} from "../../common/hooks/useDebounceValue.ts";
 import GenreButtons from "./GenreButtons/GenreButtons.tsx";
 import {genresMap} from "./GenreButtons/Genre.ts";
+import RequestFeedback from "../../common/Components/RequestFeedback/RequestFeedback.tsx";
+import MovieGridSkeleton from "../../common/Components/Skeletons/MovieGridSkeleton.tsx";
 
 const FilteredPage = () => {
     const [sort, setSort] = useState<SortOption>("popular")
@@ -16,7 +18,7 @@ const FilteredPage = () => {
     const [rating, setRating] = useState<[number, number]>([0, 10])
     const debouncedRating = useDebounceValue(rating, 500)
     const [selectedGenres, setSelectedGenres] = useState<number[]>([])
-    const {data, isLoading} = useFetchMoviesQuery({
+    const {data, isLoading, isError} = useFetchMoviesQuery({
         page,
         sort,
         minRating: debouncedRating[0],
@@ -29,9 +31,6 @@ const FilteredPage = () => {
         setRating([0, 10])
         setSelectedGenres([])
     }
-    if (isLoading) return <h1>Loading...</h1>
-
-
     return (
         <div className={s.filter}>
             <aside className={s.filter_interrface}>
@@ -67,6 +66,11 @@ const FilteredPage = () => {
                 </button>
             </aside>
             <div className={s.container}>
+                {isLoading && <MovieGridSkeleton count={10}/>}
+                {isError && <RequestFeedback message="Failed to load filtered movies." variant="error"/>}
+                {!isLoading && !isError && data?.results.length === 0 && (
+                    <RequestFeedback message="No movies match the current filters."/>
+                )}
                 <div className={s.movie_list}>
                     {data?.results.map((movie) => (
                         <MovieCard key={movie.id} movie={movie}/>

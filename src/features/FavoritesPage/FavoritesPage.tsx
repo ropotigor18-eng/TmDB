@@ -7,6 +7,7 @@ const FavoritesPage = () => {
 
     return (
         <div className={s.favorite_page}>
+            <h2>Favorites films</h2>
             <div className={s.container}>
                 {movies.map(movie => (
                     <MovieCard key={movie.id} movie={movie}/>

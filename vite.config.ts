@@ -1,8 +1,7 @@
 import {defineConfig} from 'vite'
 
-export default defineConfig({
-    base: "./", // 👈 ОБЯЗАТЕЛЬНО
 
+export default defineConfig({
     server: {
         proxy: {
             '/api': {
@@ -11,5 +10,5 @@ export default defineConfig({
                 rewrite: (path) => path.replace(/^\/api/, ''),
             },
         },
-    },
+    }
 })
